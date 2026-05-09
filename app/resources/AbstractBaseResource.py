@@ -1,4 +1,7 @@
+from __future__ import annotations
+
 from abc import ABC, abstractmethod
+from typing import Union
 from pydantic import BaseModel
 
 class AbstractBaseResource(ABC):
@@ -11,7 +14,7 @@ class AbstractBaseResource(ABC):
         pass
 
     @abstractmethod
-    def get_by_id(self, id: str) -> BaseModel:
+    def get_by_id(self, id: Union[str, dict]) -> BaseModel:
         pass
 
     @abstractmethod
@@ -19,11 +22,11 @@ class AbstractBaseResource(ABC):
         pass
 
     @abstractmethod
-    def delete(self, id: str) -> int:
+    def delete(self, id: Union[str, dict]) -> int:
         pass
 
     @abstractmethod
-    def put(self, character_id: str, new_data: BaseModel) -> int:
+    def put(self, character_id: Union[str, dict], new_data: BaseModel) -> int:
         pass
 
 

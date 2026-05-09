@@ -4,3 +4,5 @@ uvicorn[standard]
 pytest
 requests
 httpx>=0.27
+mysql-connector-python>=9.0
+python-dotenv>=1.0

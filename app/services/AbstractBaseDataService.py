@@ -1,4 +1,7 @@
+from __future__ import annotations
+
 from abc import ABC, abstractmethod
+from typing import Union
 
 class AbstractBaseDataService(ABC):
 
@@ -6,7 +9,7 @@ class AbstractBaseDataService(ABC):
         self.config = config
 
     @abstractmethod
-    def retrieveByPrimaryKey(self, primary_key: str) -> dict:
+    def retrieveByPrimaryKey(self, primary_key: Union[str, dict]) -> dict:
         pass
 
     @abstractmethod
@@ -18,9 +21,9 @@ class AbstractBaseDataService(ABC):
         pass
 
     @abstractmethod
-    def updateByPrimaryKey(self, primary_key: str, payload: dict) -> int:
+    def updateByPrimaryKey(self, primary_key: Union[str, dict], payload: dict) -> int:
         pass
 
     @abstractmethod
-    def deleteByPrimaryKey(self, primary_key: str) -> int:
+    def deleteByPrimaryKey(self, primary_key: Union[str, dict]) -> int:
         pass

@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import uuid
 from pathlib import Path
+from typing import Optional
 
 from pydantic import BaseModel, Field
 
@@ -12,7 +13,7 @@ _DEFAULT_DATA_PATH = Path(__file__).resolve().parents[2] / "data" / "harry_potte
 
 
 class HarryPotterCharacter(BaseModel):
-    id: str | None = None
+    id: Optional[str] = None
     first_name: str = ""
     last_name: str = ""
     house_name: str = ""
@@ -23,7 +24,7 @@ class HarryPotterCollection(BaseModel):
 
 
 class HarryPotterResource(AbstractBaseResource):
-    def __init__(self, config: dict | None = None) -> None:
+    def __init__(self, config: Optional[dict] = None) -> None:
         cfg = dict(config or {})
         super().__init__(cfg)
         service_config: dict = {
