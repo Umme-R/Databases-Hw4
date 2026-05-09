@@ -1,6 +1,6 @@
 # W4111 Web Application Project
 
-This repository is the **starter template** for the course web application assignment. You will fork or clone it and implement a complete, production-style data-backed service on top of the skeleton provided here.
+The jupyter notebook that tests everything is the in "tests" folder and the file is called "Testing Hw4 Programming.ipynb"
 
 ## Project goal
 
